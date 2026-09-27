@@ -3,31 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CraveIt — Food that fits your cycle</title>
-  <meta name="description" content="CraveIt tracks your menstrual cycle, listens to what you're craving, and suggests recipes chosen for the phase you're in. From Crave It Health (Pty) Ltd, Cape Town.">
+  <title>CraveIt — A women-centred approach to the cycle, cravings and nutrition</title>
+  <meta name="description" content="CraveIt is a women's health and nutrition app centred on the menstrual cycle, food preferences, cravings, symptoms and everyday wellbeing. From Crave It Health (Pty) Ltd, Cape Town.">
   <link rel="canonical" href="https://craveit.co.za/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CraveIt — Food that fits your cycle">
-  <meta property="og:description" content="Cycle tracking, craving logging and recipes for the phase you're in.">
+  <meta property="og:site_name" content="CraveIt">
+  <meta property="og:title" content="CraveIt — A women-centred approach to the cycle, cravings and nutrition">
+  <meta property="og:description" content="Helping women notice patterns across their cycle, cravings, nutrition and everyday wellbeing — support between consultations, never instead of them.">
   <meta property="og:url" content="https://craveit.co.za/">
   <meta property="og:image" content="https://craveit.co.za/assets/img/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CraveIt logo with the words: Food that fits your cycle.">
-  <meta property="og:site_name" content="CraveIt">
+  <meta property="og:image:alt" content="The CraveIt logo and the words: a women-centred approach to the cycle, cravings, nutrition and everyday wellbeing.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#5A0760">
+  <meta name="theme-color" content="#4A0A50">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/SpecialGothic-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Lora-Italic-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Crave It Health (Pty) Ltd",
+    "legalName": "Crave It Health (Pty) Ltd",
     "alternateName": "CraveIt",
+    "duns": "588347011",
     "url": "https://craveit.co.za/",
     "logo": "https://craveit.co.za/assets/img/icon-192.png",
     "email": "support@craveit.co.za",
@@ -36,169 +40,425 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/" aria-label="CraveIt home"><img src="/assets/img/craveit-logo-small.png" alt="" width="30" height="36">CraveIt</a>
-      <nav class="nav" aria-label="Main">
-        <a href="#how" class="hide-sm">How it works</a>
+  <header class="hdr">
+    <div class="hdr-bar">
+      <a class="brand" href="#top" aria-label="CraveIt home"><img src="/assets/img/craveit-logo-small.png" alt="" width="26" height="31">CraveIt</a>
+      <nav class="hdr-nav" id="site-nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#product">The App</a>
+        <a href="#clinicians">For Clinicians</a>
         <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
       </nav>
+      <div class="hdr-actions">
+        <a class="btn btn--sm" href="mailto:support@craveit.co.za?subject=CraveIt%20waiting%20list" aria-label="Join waiting list"><span>Join<span class="cta-long"> waiting list</span></span></a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <svg class="bars" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero-copy">
-          <p class="eyebrow">For your cycle, your cravings and your kitchen</p>
-          <h1 id="hero-title">Food that fits your cycle.</h1>
-          <p class="lead">CraveIt tracks your menstrual cycle, listens to what you're craving, and suggests recipes chosen for the phase you're in.</p>
-          <p class="status"><span class="dot" aria-hidden="true"></span>Now in testing for iPhone · not yet on the App Store</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:support@craveit.co.za?subject=CraveIt%20waiting%20list">Join the waiting list</a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+
+    <!-- Hero -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="hex hero__hex" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="status" data-reveal="0"><span class="status__dot" aria-hidden="true"></span>Now in testing for iPhone · not yet on the App&nbsp;Store</p>
+          <h1 id="hero-title" data-reveal="80">Your cycle, your cravings, <span class="hero__accent">understood.</span></h1>
+          <p class="hero__lede" data-reveal="160">A women-centred approach to the cycle, cravings, nutrition and everyday wellbeing — helping you notice patterns, not chase rules.</p>
+          <div class="hero__actions" data-reveal="240">
+            <a class="btn" href="mailto:support@craveit.co.za?subject=CraveIt%20waiting%20list">Join the waiting list</a>
+            <a class="btn btn--secondary" href="#about">Discover CraveIt</a>
+          </div>
+          <p class="hero__tags" data-reveal="320"><span>Cycle Awareness</span><span class="sep" aria-hidden="true">·</span><span>Cravings</span><span class="sep" aria-hidden="true">·</span><span>Nutrition</span><span class="sep" aria-hidden="true">·</span><span>Wellbeing</span></p>
+        </div>
+
+        <div class="hero__visual" data-reveal="200">
+          <div class="phone">
+            <div class="phone__screen"><img src="/assets/img/screen-recipes.webp" width="417" height="900" fetchpriority="high" alt="The CraveIt recipe list with dishes such as chicken pesto pasta and chocolate pancakes, each with cooking time, rating and diet tags."></div>
+            <div class="phone__notch" aria-hidden="true"></div>
+          </div>
+
+          <!-- Phase ring: an illustration, not real data -->
+          <div class="ring-card" data-ring role="group" aria-label="Illustration only: an example CraveIt cycle ring stepping through the four cycle phases. It does not show real data.">
+            <div class="ring" aria-hidden="true">
+              <svg viewBox="0 0 100 100" focusable="false">
+                <circle class="ring__seg" cx="50" cy="50" r="46" fill="none" stroke="#BD5E8F" stroke-linecap="round" stroke-dasharray="39.02 289.03" stroke-dashoffset="-6.50"/>
+                <circle class="ring__seg" cx="50" cy="50" r="46" fill="none" stroke="#F8BBD9" stroke-linecap="round" stroke-dasharray="67.92 289.03" stroke-dashoffset="-58.53"/>
+                <circle class="ring__seg" cx="50" cy="50" r="46" fill="none" stroke="#963C86" stroke-linecap="round" stroke-dasharray="21.68 289.03" stroke-dashoffset="-139.46"/>
+                <circle class="ring__seg is-on" cx="50" cy="50" r="46" fill="none" stroke="#5A0760" stroke-linecap="round" stroke-dasharray="108.38 289.03" stroke-dashoffset="-174.14"/>
+              </svg>
+              <div class="ring__marker"><span></span></div>
+              <div class="ring__face">
+                <div class="ring__layer"><img src="/assets/img/phase-period.png" width="468" height="492" alt=""><div class="ring__text"><div class="ring__name">Period</div><div class="ring__day">Day 4</div></div></div>
+                <div class="ring__layer"><img src="/assets/img/phase-follicular.png" width="468" height="492" alt=""><div class="ring__text"><div class="ring__name">Follicular</div><div class="ring__day">Day 9</div></div></div>
+                <div class="ring__layer"><img src="/assets/img/phase-ovulation.png" width="468" height="492" alt=""><div class="ring__text"><div class="ring__name">Ovulating</div><div class="ring__day">Day 14</div></div></div>
+                <div class="ring__layer is-on"><img src="/assets/img/phase-luteal.png" width="468" height="492" alt=""><div class="ring__text"><div class="ring__name">Luteal</div><div class="ring__day">Day 22</div></div></div>
+              </div>
+            </div>
+            <div class="ring__labels" aria-hidden="true">
+              <div class="ring__label">Period Phase</div>
+              <div class="ring__label">Follicular Phase</div>
+              <div class="ring__label">Ovulation Phase</div>
+              <div class="ring__label is-on">Luteal Phase</div>
+            </div>
+            <div class="ring__dots">
+              <button type="button" class="ring__dot" style="background:#BD5E8F" aria-pressed="false" aria-label="Show the period phase example" disabled></button>
+              <button type="button" class="ring__dot" style="background:#F8BBD9" aria-pressed="false" aria-label="Show the follicular phase example" disabled></button>
+              <button type="button" class="ring__dot" style="background:#963C86" aria-pressed="false" aria-label="Show the ovulation phase example" disabled></button>
+              <button type="button" class="ring__dot is-on" style="background:#5A0760" aria-pressed="true" aria-label="Show the luteal phase example" disabled></button>
+            </div>
+          </div>
+
+          <!-- Craving picker: an illustration of the in-app flow -->
+          <div class="crave" data-crave role="group" aria-labelledby="crave-title">
+            <p class="crave__title" id="crave-title">What are you craving?</p>
+            <div class="crave__chips">
+              <button type="button" class="chip" aria-pressed="false" disabled data-note="Noted. We'll look for savoury recipes that fit where you are this week.">Salty</button>
+              <button type="button" class="chip" aria-pressed="true" disabled data-note="In your luteal phase? Many people notice sweeter cravings — here are recipes to try.">Sweet</button>
+              <button type="button" class="chip" aria-pressed="false" disabled data-note="Warming dishes coming up, matched to your prep time.">Spicy / Hot</button>
+              <button type="button" class="chip" aria-pressed="false" disabled data-note="Umami-rich ideas, with swaps that suit your goals.">Savory</button>
+            </div>
+            <p class="crave__note" aria-live="polite">In your luteal phase? Many people notice sweeter cravings — here are recipes to try.</p>
           </div>
         </div>
-        <div class="hero-visual">
-          <span class="ring" aria-hidden="true"></span>
-          <div class="phone"><img src="/assets/img/app-home.jpg" width="600" height="962" alt="The CraveIt home screen: a cycle ring showing Luteal, day 22, a one-day streak, buttons for Track Period and Crave Insights, and progress bars for cravings logged, meals made, swaps and recipes saved."></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="sec" aria-labelledby="about-title">
+      <div class="container grid cols-420 about__grid">
+        <div class="head head--18" data-reveal="0">
+          <p class="eyebrow">About CraveIt</p>
+          <h2 id="about-title" class="h2 balance">Support that lives between consultations.</h2>
+        </div>
+        <div class="stack about__copy">
+          <p data-reveal="80"><strong class="hl">CraveIt</strong> is a women's health and nutrition app centred on the menstrual cycle, food preferences, cravings, symptoms and everyday wellbeing.</p>
+          <p data-reveal="140">It is designed to help a woman notice <strong class="hl">patterns</strong> rather than prescribe a single definition of what healthy should look like.</p>
+          <p data-reveal="200">We are not trying to replace clinicians. We are building the layer of support that exists <strong class="hl">between consultations</strong>.</p>
+        </div>
+      </div>
+      <div class="quote-card grad" data-reveal="0">
+        <div class="hex hex--night" aria-hidden="true"></div>
+        <p>“Helping women observe, reflect, learn — and arrive at better questions about their own bodies.”</p>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="sec why" aria-labelledby="why-title">
+      <div class="container grid cols-420 why__grid">
+        <div class="head head--18" data-reveal="0">
+          <h2 id="why-title" class="eyebrow">Why we are building it</h2>
+          <p class="why__lead">Women are given fragments of information about their bodies, nutrition and menstrual health — and far less support in connecting those pieces to their lived, everyday experience.</p>
+        </div>
+        <div class="stack why__copy">
+          <p class="pretty" data-reveal="80">Our mission is to create a trusted, human-centred space where women can better understand their own patterns and make more informed food and wellbeing choices.</p>
+          <p class="pretty" data-reveal="140">We want food to remain food — while still recognising its role in nutritional wellbeing.</p>
+          <p data-reveal="200"><strong class="hl">The focus is forward:</strong> to uplift and to support.</p>
         </div>
       </div>
     </section>
 
-    <section id="how" class="band" aria-labelledby="how-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">How it works</p>
-          <h2 id="how-title">From “I'm craving something” to a recipe that suits you.</h2>
+    <!-- What CraveIt is -->
+    <section class="sec mist" aria-labelledby="caps-title">
+      <div class="hex" aria-hidden="true"></div>
+      <div class="container">
+        <div class="head head--split" data-reveal="0">
+          <div class="head">
+            <p class="eyebrow">What CraveIt is</p>
+            <h2 id="caps-title" class="h2">Five capabilities, one experience.</h2>
+          </div>
+          <p class="head-note">Designed to work together rather than as five separate apps.</p>
         </div>
-        <ol class="steps" role="list">
-          <li class="step">
-            <h3>Track your cycle</h3>
-            <p>Log your period and how you feel in a few taps. CraveIt learns your cycle length as you go and tells you how confident its predictions are.</p>
-          </li>
-          <li class="step">
-            <h3>Say what you're craving</h3>
-            <p>Sweet, salty, crunchy, creamy, or one ingredient you can't stop thinking about — plus how much time you have and which meal it's for.</p>
-          </li>
-          <li class="step">
-            <h3>Get recipes for your phase</h3>
-            <p>Recipes are ranked for your craving, your current phase, your goals and the diet and allergy settings you've chosen — and each one shows why it was picked.</p>
-          </li>
+        <ul class="list grid cols-320 caps">
+          <li data-reveal="0"><div class="cap"><span class="cap__n" aria-hidden="true">01</span><h3>Cycle-Aware</h3><p>Your cycle recorded alongside mood, cramps, bloating, digestion, sleep and cravings.</p></div></li>
+          <li data-reveal="80"><div class="cap"><span class="cap__n" aria-hidden="true">02</span><h3>Food-Aware</h3><p>Cravings and food choices are understood in context — never treated as a behavioural failure.</p></div></li>
+          <li data-reveal="160"><div class="cap"><span class="cap__n" aria-hidden="true">03</span><h3>Guidance-Led</h3><p>Relevant nutritional and recipe guidance, shaped by what you choose to share.</p></div></li>
+          <li data-reveal="240"><div class="cap"><span class="cap__n" aria-hidden="true">04</span><h3>Whole-Person</h3><p>Nutrition sits alongside menstrual and everyday wellbeing rather than isolated from it.</p></div></li>
+          <li data-reveal="320"><div class="cap cap--dark"><div class="hex hex--night" aria-hidden="true"></div><span class="cap__n" aria-hidden="true">05</span><h3>Clinically Conscious</h3><p>Designed to support evidence-informed education and decision-making, while holding a clear boundary between general guidance and medical diagnosis or treatment.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How the experience connects -->
+    <section id="how" class="sec" aria-labelledby="how-title">
+      <div class="container">
+        <div class="head head--720" data-reveal="0">
+          <p class="eyebrow">How the experience connects</p>
+          <h2 id="how-title" class="h2 balance">Notice. Record. Understand. Act.</h2>
+          <p>CraveIt joins three things a woman already knows about herself — and returns what may be relevant.</p>
+        </div>
+        <div class="steps-wrap">
+          <div class="track" aria-hidden="true"></div>
+          <div class="track-fill" data-grow aria-hidden="true"></div>
+          <ol class="list grid cols-220 steps">
+            <li class="step" data-reveal="0"><span class="step__n" aria-hidden="true">1</span><h3>Notice</h3><p>What she is experiencing — symptoms, mood, digestion, sleep.</p></li>
+            <li class="step" data-reveal="120"><span class="step__n" aria-hidden="true">2</span><h3>Record</h3><p>What she is craving or interested in eating, on her own terms.</p></li>
+            <li class="step" data-reveal="240"><span class="step__n" aria-hidden="true">3</span><h3>Understand</h3><p>What may be relevant to her cycle, stated goals, conditions and dietary preferences.</p></li>
+            <li class="step" data-reveal="360"><span class="step__n" aria-hidden="true">4</span><h3>Act</h3><p>Nutrition and recipe guidance she can use today — and better questions for her clinician.</p></li>
+          </ol>
+        </div>
+        <p class="aside" data-reveal="0">CraveIt is being shaped together with the health professionals we are bringing on board. Cycle predictions are estimates, and every recommendation is general nutrition support — not a diagnosis, treatment or substitute for care.</p>
+      </div>
+    </section>
+
+    <!-- Inside the app -->
+    <section id="product" class="sec product" aria-labelledby="product-title">
+      <div class="hex" aria-hidden="true"></div>
+      <div class="container">
+        <div class="head head--720" data-reveal="0">
+          <p class="eyebrow">Inside the app</p>
+          <h2 id="product-title" class="h2">Built around how you actually live.</h2>
+          <p>Screens from our design and user-experience work. The app in testing has moved on in places.</p>
+        </div>
+        <div class="grid cols-380 screens" data-screens>
+          <div class="scr-list" data-reveal="0">
+            <button type="button" class="scr is-on" aria-pressed="true" aria-controls="scr-stage" disabled><span class="scr__n" aria-hidden="true">01</span><span class="scr__text"><span class="scr__title">Onboarding</span><span class="scr__desc">Her goals, conditions and preferences, stated up front.</span></span><span class="scr__bar" aria-hidden="true"><span class="scr__fill"></span></span></button>
+            <button type="button" class="scr" aria-pressed="false" aria-controls="scr-stage" disabled><span class="scr__n" aria-hidden="true">02</span><span class="scr__text"><span class="scr__title">Cycle</span><span class="scr__desc">Phases and symptoms logged in one view.</span></span><span class="scr__bar" aria-hidden="true"><span class="scr__fill"></span></span></button>
+            <button type="button" class="scr" aria-pressed="false" aria-controls="scr-stage" disabled><span class="scr__n" aria-hidden="true">03</span><span class="scr__text"><span class="scr__title">Cravings</span><span class="scr__desc">Taste, texture and prep time — not calories.</span></span><span class="scr__bar" aria-hidden="true"><span class="scr__fill"></span></span></button>
+            <button type="button" class="scr" aria-pressed="false" aria-controls="scr-stage" disabled><span class="scr__n" aria-hidden="true">04</span><span class="scr__text"><span class="scr__title">Recipes</span><span class="scr__desc">Guidance she can cook the same evening.</span></span><span class="scr__bar" aria-hidden="true"><span class="scr__fill"></span></span></button>
+            <button type="button" class="scr-pause">
+              <svg class="pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+              <span class="scr-pause__label">Pause slideshow</span>
+            </button>
+          </div>
+          <div class="scr-stage" id="scr-stage" data-reveal="120">
+            <div class="phone phone--lg">
+              <div class="phone__screen">
+                <img class="scr-img is-on" src="/assets/img/screen-onboarding.webp" width="417" height="900" loading="lazy" alt="The CraveIt Your Health Goals screen: cards for goals such as balanced nutrition, boosting energy, digestive health, immune support, heart health and skin health.">
+                <img class="scr-img" aria-hidden="true" src="/assets/img/screen-cycle.webp" width="417" height="900" loading="lazy" alt="The CraveIt cycle calendar for a month, with period and luteal days shaded and a button to add symptoms.">
+                <img class="scr-img" aria-hidden="true" src="/assets/img/screen-cravings.webp" width="417" height="900" loading="lazy" alt="The CraveIt craving form: choose a taste, type, texture and prep time, then name one ingredient.">
+                <img class="scr-img" aria-hidden="true" src="/assets/img/screen-recipes.webp" width="417" height="900" loading="lazy" alt="The CraveIt recipe list with dishes such as chicken pesto pasta and chocolate pancakes, each with cooking time, rating and diet tags.">
+              </div>
+              <div class="phone__notch" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="philosophy" class="sec dark" aria-labelledby="philosophy-title">
+      <div class="hex hex--night" aria-hidden="true"></div>
+      <div class="container">
+        <div class="head head--760" data-reveal="0">
+          <p class="eyebrow">Our philosophy</p>
+          <h2 id="philosophy-title" class="h2 balance">Food should be celebrated, explored and supportive.</h2>
+        </div>
+        <div class="grid cols-420 pair">
+          <div class="panel panel--glass" data-reveal="0">
+            <h3 class="kicker kicker--soft">What We Move Away From</h3>
+            <ul class="list lines lines--away">
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B89AB4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>A calorie counter at the centre of the experience.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B89AB4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>A requirement to continually quantify food.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B89AB4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>A visual standard for what a woman's body is supposed to look like.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B89AB4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Blanket rules applied to every woman's health.</span></li>
+            </ul>
+          </div>
+          <div class="panel panel--white" data-reveal="120">
+            <h3 class="kicker kicker--purple">What We Make Room For</h3>
+            <ul class="list lines">
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Curiosity and intuition alongside structured guidance.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Understanding her experiences instead of fearing them.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Deep customisation across health, cycle and personal goals.</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Encouragement toward appropriate professional care.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Holistic by design -->
+    <section class="sec" aria-labelledby="market-title">
+      <div class="container">
+        <div class="head head--760" data-reveal="0">
+          <p class="eyebrow">Holistic by design</p>
+          <h2 id="market-title" class="h2">One experience, not five apps.</h2>
+        </div>
+        <div class="grid cols-420 pair">
+          <div class="mk mk--today" data-reveal="0">
+            <h3 class="kicker kicker--muted">The Market Today</h3>
+            <p>Most products are built around <strong>one</strong> part of the picture — the cycle, or food, or symptoms, or recipes.</p>
+            <p>A woman has to download several apps to assemble a single picture of her own health.</p>
+            <p>Recommendations tend to apply a <strong>blanket rule</strong> to facets of health that are not the same for every woman.</p>
+          </div>
+          <div class="mk mk--sits grad" data-reveal="120">
+            <div class="hex hex--night" aria-hidden="true"></div>
+            <h3 class="kicker kicker--white">Where CraveIt Sits</h3>
+            <p>One holistic experience, with <strong>deeper customisation</strong> at the core of the product rather than tucked away in a setting.</p>
+            <p>Multiple factors — cycle, goals, conditions, dietary preference — are taken into account before anything is recommended.</p>
+            <p>The opportunity is <strong>integration</strong>, not another single-purpose tracker.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boundaries -->
+    <section id="boundaries" class="sec mist" aria-labelledby="bounds-title">
+      <div class="hex" aria-hidden="true"></div>
+      <div class="container">
+        <div class="head head--split" data-reveal="0">
+          <div class="head">
+            <p class="eyebrow">Boundaries we protect</p>
+            <h2 id="bounds-title" class="h2">Support, never instead of care.</h2>
+          </div>
+          <p class="head-note head-note--wide">The lines we hold ourselves to — written down now, before there is pressure to loosen them, and the lines we are asking clinicians to hold us to.</p>
+        </div>
+        <ul class="list grid cols-340 bounds">
+          <li class="bound" data-reveal="0"><span class="bound__n" aria-hidden="true">1</span><p>CraveIt is <strong>not intended to diagnose</strong> disease or medical conditions.</p></li>
+          <li class="bound" data-reveal="80"><span class="bound__n" aria-hidden="true">2</span><p>It does <strong>not replace</strong> a dietitian, doctor, gynaecologist, psychologist or other qualified professional.</p></li>
+          <li class="bound" data-reveal="160"><span class="bound__n" aria-hidden="true">3</span><p>We will not imply that nutrition alone can <strong>independently treat</strong> complex reproductive or hormonal conditions.</p></li>
+          <li class="bound" data-reveal="0"><span class="bound__n" aria-hidden="true">4</span><p>We are working to make content clearly separate <strong>established evidence, plausible mechanisms and hypotheses</strong>.</p></li>
+          <li class="bound" data-reveal="80"><span class="bound__n" aria-hidden="true">5</span><p>Where symptoms may warrant assessment — a very long cycle or prolonged bleeding, for example — the app points her towards a clinician: <strong>escalation</strong>, not self-treatment.</p></li>
+          <li class="bound" data-reveal="160"><span class="bound__n" aria-hidden="true">6</span><p>Personalisation should improve <strong>relevance</strong> — never create an illusion of clinical certainty.</p></li>
+        </ul>
+        <p class="note" data-reveal="0"><strong>Please note:</strong> CraveIt is not a medical device and does not give medical advice. Cycle predictions are estimates, so don't use CraveIt to prevent a pregnancy or to plan one. Allergy and diet filters are a help, not a guarantee — if you have a food allergy, always check ingredients and product labels yourself. Talk to a healthcare provider about medical concerns or before changing your diet.</p>
+      </div>
+    </section>
+
+    <!-- Your data -->
+    <section class="sec" aria-labelledby="data-title">
+      <div class="container grid cols-420 data__grid">
+        <div class="head" data-reveal="0">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="data-title" class="h2">Your data stays yours.</h2>
+          <p>Cycle and symptom information is personal. We treat it that way.</p>
+        </div>
+        <ul class="list checks" data-reveal="120">
+          <li><span class="checks__i" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span>We never sell your personal information.</span></li>
+          <li><span class="checks__i" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span>Your health information is stored securely and privately.</span></li>
+          <li><span class="checks__i" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span>Delete your account and data from inside the app whenever you like — <a href="/support.html#delete">here's how</a>.</span></li>
+          <li><span class="checks__i" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span>Read the full <a href="/privacy.html">privacy policy</a>.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Where we are today -->
+    <section class="today" aria-labelledby="today-title">
+      <div class="today-card" data-reveal="0">
+        <div class="hex hex--night" aria-hidden="true"></div>
+        <div>
+          <h2 id="today-title" class="eyebrow">Where we are today</h2>
+          <div class="stages">
+            <div class="track" aria-hidden="true"></div>
+            <div class="track-fill" data-grow aria-hidden="true"></div>
+            <ul class="list grid cols-220">
+              <li class="stage"><span class="stage__dot stage__dot--now" aria-hidden="true"></span><span class="stage__t">Testing Phase</span><span class="kicker kicker--gold">User experience, live</span></li>
+              <li class="stage"><span class="stage__dot" aria-hidden="true"></span><span class="stage__t">Before End 2026</span><span class="kicker">Target launch</span></li>
+              <li class="stage"><span class="stage__dot" aria-hidden="true"></span><span class="stage__t">South Africa</span><span class="kicker">First market</span></li>
+            </ul>
+          </div>
+          <div class="grid cols-380 today-cols">
+            <div><h3 class="kicker">On the Team Already</h3><p class="pretty">Product development, food research, design and technology — enough to build the experience and put it in front of real users. A dietitian is being brought on board to lead nutrition.</p></div>
+            <div><h3 class="kicker">Still Being Developed</h3><p class="pretty">Recommendation logic, the research framework, and the clinical components that will decide how far the product is allowed to speak.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For clinicians -->
+    <section id="clinicians" class="sec dark" aria-labelledby="gap-title">
+      <div class="hex hex--night" aria-hidden="true"></div>
+      <div class="container">
+        <div class="head head--860" data-reveal="0">
+          <p class="eyebrow">For clinicians and dietitians</p>
+          <h2 id="gap-title" class="h2">The gap we are closing.</h2>
+          <p class="gap-quote">If CraveIt is going to earn trust in women's health, the information and language inside it need to withstand professional scrutiny.</p>
+        </div>
+
+        <h3 class="kicker kicker--gold mt-64" data-reveal="0">What We Need to Strengthen</h3>
+        <ol class="list grid cols-340 needs">
+          <li class="need" data-reveal="0"><span class="need__n" aria-hidden="true">01</span><span>Clinical and dietetic vetting of the information and terminology we use.</span></li>
+          <li class="need" data-reveal="80"><span class="need__n" aria-hidden="true">02</span><span>Guidance on where evidence is established, emerging, mixed or insufficient.</span></li>
+          <li class="need" data-reveal="160"><span class="need__n" aria-hidden="true">03</span><span>Review of how cycle symptoms and nutritional concepts are framed, so we never overstate causation.</span></li>
+          <li class="need" data-reveal="0"><span class="need__n" aria-hidden="true">04</span><span>Input into safety boundaries, escalation points and referral language.</span></li>
+          <li class="need" data-reveal="80"><span class="need__n" aria-hidden="true">05</span><span>Perspective on how real women experience these issues in practice.</span></li>
+          <li class="need" data-reveal="160"><span class="need__n" aria-hidden="true">06</span><span>A clear view of where digital tools genuinely help — and where they can cause harm.</span></li>
         </ol>
-      </div>
-    </section>
 
-    <section aria-labelledby="craving-title">
-      <div class="wrap split">
-        <div class="phone"><img src="/assets/img/app-craving.jpg" width="600" height="1412" alt="The CraveIt craving form: choose a taste, type, texture, prep time and meal, add an ingredient, then tap Give Recipes." loading="lazy"></div>
-        <div class="section-head" style="margin-bottom:0">
-          <p class="eyebrow">Cravings, taken seriously</p>
-          <h2 id="craving-title">Your craving is the starting point, not the problem.</h2>
-          <p>Many people notice their cravings change across the month. Instead of fighting them, CraveIt starts from them: tell it what you feel like and it suggests meals that match the craving and suit where you are in your cycle.</p>
+        <div class="grid cols-420 pair pair--tight">
+          <div class="panel panel--white ask" data-reveal="0">
+            <h3>What we are asking for</h3>
+            <p>We are looking for more than a sign-off. We want a <strong>clinical voice in the room</strong> while the product is still being shaped.</p>
+            <p>That means challenging assumptions, identifying blind spots, refining language, strengthening evidence standards — and helping us decide what should <strong>never</strong> be included.</p>
+            <p class="ask__quote">A woman should feel more informed and more connected to her own experience after using CraveIt — not more anxious, judged or confused.</p>
+          </div>
+          <div class="panel panel--glass involve" data-reveal="120">
+            <h3 class="kicker kicker--gold">How Involvement Could Look</h3>
+            <ul class="list lines lines--involve">
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Reviewing the language and claims inside the product</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Setting the evidence standard for what reaches users</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Defining safety flags and referral prompts</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Sitting in product decisions as a standing clinical advisor</span></li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C79A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Shaping the future clinical and research components</span></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="band" aria-labelledby="phases-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Four phases, one cycle</p>
-          <h2 id="phases-title">See which phase you're most likely in, at a glance.</h2>
-          <p>Your home screen shows your likely phase and cycle day, and your calendar marks what you've logged and what's only predicted.</p>
-        </div>
-        <ul class="phases" role="list">
-          <li class="phase"><img src="/assets/img/phase-period.png" width="468" height="492" alt="" loading="lazy"><h3>Period</h3><p>Your cycle starts on the first day of bleeding.</p></li>
-          <li class="phase"><img src="/assets/img/phase-follicular.png" width="468" height="492" alt="" loading="lazy"><h3>Follicular</h3><p>The days after your period, leading up to ovulation.</p></li>
-          <li class="phase"><img src="/assets/img/phase-ovulation.png" width="468" height="492" alt="" loading="lazy"><h3>Ovulation</h3><p>A short window around the middle of your cycle.</p></li>
-          <li class="phase"><img src="/assets/img/phase-luteal.png" width="468" height="492" alt="" loading="lazy"><h3>Luteal</h3><p>The days before your next period begins.</p></li>
+        <h3 class="kicker kicker--gold mt-72" data-reveal="0">Questions to Explore Together</h3>
+        <ul class="list grid cols-340 questions">
+          <li data-reveal="0">What would make you trust a digital women's health platform enough to recommend it to a patient?</li>
+          <li data-reveal="100">Which parts of the menstrual and nutrition conversation are underserved between consultations?</li>
+          <li data-reveal="0">Which common claims about hormones, cravings and nutrition should CraveIt actively avoid?</li>
+          <li data-reveal="100">Where should the app draw the line between useful education and clinical advice?</li>
+          <li data-reveal="0">What safety flags, referral prompts or review processes would you expect?</li>
+          <li data-reveal="100">How do we design for women as they actually live, rather than an idealised patient?</li>
         </ul>
       </div>
     </section>
 
-    <section aria-labelledby="features-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">What's inside</p>
-          <h2 id="features-title">Built around you, not an average.</h2>
+    <!-- Reach out -->
+    <section id="contact" class="sec" aria-labelledby="contact-title">
+      <div class="contact-card grad cols-380" data-reveal="0">
+        <div class="hex hex--night" aria-hidden="true"></div>
+        <div class="contact-card__main">
+          <img class="contact-card__logo" src="/assets/img/craveit-logo.png" width="404" height="480" loading="lazy" alt="">
+          <h2 id="contact-title">Reach out.</h2>
+          <p>We would like the opportunity to meet in person to discuss a collaboration, or onboarding onto the team — a call after work hours works equally well if that suits your schedule better.</p>
+          <a class="btn" href="mailto:support@craveit.co.za?subject=Collaborating%20with%20CraveIt">Start a conversation</a>
         </div>
-        <ul class="features" role="list">
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
-            <h3>A calendar that learns you</h3>
-            <p>Predictions improve with every cycle you log, and the app shows when it's unsure instead of pretending to know.</p>
-          </li>
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 11h14a7 7 0 0 1-14 0Z"/><path d="M9 7c0-2 2-2 2-4M13 7c0-2 2-2 2-4"/></svg></span>
-            <h3>Over 5,000 recipes</h3>
-            <p>With South African ingredient names. Set your allergies and diet, and CraveIt hides recipes whose listed ingredients don't fit. Ingredient information can be incomplete, so if you have a food allergy, always check the ingredients and product labels yourself.</p>
-          </li>
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></span>
-            <h3>Your goals, your conditions</h3>
-            <p>Tell CraveIt about your goals or a health condition you live with, such as PCOS or endometriosis, and it takes them into account when it ranks recipes. This is general nutrition support only — it does not diagnose, treat or cure any condition.</p>
-          </li>
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></svg></span>
-            <h3>Sources you can check</h3>
-            <p>Tap the info icon beside cycle guidance to see the research behind it.</p>
-          </li>
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg></span>
-            <h3>Badges and streaks</h3>
-            <p>Small wins for logging, cooking and trying something new, collected as you go.</p>
-          </li>
-          <li class="feature">
-            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4M9 12h6M9 16h6"/></svg></span>
-            <h3>A weekly report</h3>
-            <p>Your week's cycle, cravings and meals in one place, so patterns are easier to spot.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="band" aria-labelledby="privacy-title">
-      <div class="wrap privacy">
-        <div class="section-head" style="margin-bottom:0">
-          <p class="eyebrow">Your data</p>
-          <h2 id="privacy-title">Your health data stays yours.</h2>
-          <p>Cycle and symptom data is personal. We treat it that way.</p>
+        <div class="contact-box">
+          <span class="kicker">Contact</span>
+          <span class="contact-box__who">The CraveIt Team</span>
+          <a href="mailto:support@craveit.co.za">support@craveit.co.za</a>
+          <span>Cape Town, South Africa</span>
         </div>
-        <ul class="checks" role="list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>We never sell your personal information.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Your health information is stored securely and privately.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Delete your account and data from inside the app whenever you like — <a href="/support.html#delete">here's how</a>.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Read the full <a href="/privacy.html">privacy policy</a>.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section aria-label="Health notice">
-      <div class="wrap">
-        <p class="note"><strong>Please note:</strong> CraveIt is not a medical device and does not give medical advice. Cycle predictions are estimates, so don't use CraveIt to prevent a pregnancy or to plan one. Allergy and diet filters are a help, not a guarantee. Always talk to a healthcare provider about medical concerns or before making changes to your diet.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="legal">
-        <strong>Crave It Health (Pty) Ltd</strong>
-        <span>Company registration number 2026/078218/07 · Cape Town, South Africa</span>
-        <span><a href="mailto:support@craveit.co.za">support@craveit.co.za</a></span>
+    <div class="site-footer__in">
+      <div class="site-footer__top">
+        <div class="site-footer__org">
+          <div class="site-footer__brand"><img src="/assets/img/craveit-logo-small.png" width="24" height="29" alt="">CraveIt</div>
+          <strong>Crave It Health (Pty) Ltd</strong>
+          <span>Company registration number 2026/078218/07 · Cape Town, South Africa</span>
+          <a href="mailto:support@craveit.co.za">support@craveit.co.za</a>
+        </div>
+        <nav aria-label="Footer">
+          <a href="/support.html">Support</a>
+          <a href="/support.html#delete">Delete your account</a>
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+      <div class="site-footer__base">
         <span>© 2026 Crave It Health (Pty) Ltd</span>
         <span class="tm">iPhone is a trademark of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</span>
       </div>
-      <nav aria-label="Footer">
-        <a href="/support.html">Support</a>
-        <a href="/support.html#delete">Delete your account</a>
-        <a href="/privacy.html">Privacy policy</a>
-        <a href="/terms.html">Terms</a>
-      </nav>
     </div>
   </footer>
+
+</div>
 </body>
 </html>

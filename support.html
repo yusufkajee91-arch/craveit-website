@@ -13,29 +13,39 @@
   <meta property="og:url" content="https://craveit.co.za/support.html">
   <meta property="og:image" content="https://craveit.co.za/assets/img/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#5A0760">
+  <meta name="theme-color" content="#4A0A50">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/" aria-label="CraveIt home"><img src="/assets/img/craveit-logo-small.png" alt="" width="30" height="36">CraveIt</a>
-      <nav class="nav" aria-label="Main">
-        <a href="/#how" class="hide-sm">How it works</a>
+  <header class="hdr">
+    <div class="hdr-bar">
+      <a class="brand" href="/" aria-label="CraveIt home"><img src="/assets/img/craveit-logo-small.png" alt="" width="26" height="31">CraveIt</a>
+      <nav class="hdr-nav" id="site-nav" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#philosophy">Philosophy</a>
+        <a href="/#product">The App</a>
+        <a href="/#clinicians">For Clinicians</a>
         <a href="/support.html" aria-current="page">Support</a>
-        <a href="/privacy.html">Privacy</a>
       </nav>
+      <div class="hdr-actions">
+        <a class="btn btn--sm" href="mailto:support@craveit.co.za?subject=CraveIt%20waiting%20list" aria-label="Join waiting list"><span>Join<span class="cta-long"> waiting list</span></span></a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <svg class="bars" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main" class="doc">
     <div class="wrap">
-      <p class="eyebrow">Support</p>
+      <p class="label">Support</p>
       <h1>How can we help?</h1>
       <p class="meta">Email <a href="mailto:support@craveit.co.za">support@craveit.co.za</a> and a person on the CraveIt team will reply.</p>
 
@@ -71,20 +81,25 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="legal">
-        <strong>Crave It Health (Pty) Ltd</strong>
-        <span>Company registration number 2026/078218/07 · Cape Town, South Africa</span>
-        <span><a href="mailto:support@craveit.co.za">support@craveit.co.za</a></span>
+    <div class="site-footer__in">
+      <div class="site-footer__top">
+        <div class="site-footer__org">
+          <div class="site-footer__brand"><img src="/assets/img/craveit-logo-small.png" width="24" height="29" alt="">CraveIt</div>
+          <strong>Crave It Health (Pty) Ltd</strong>
+          <span>Company registration number 2026/078218/07 · Cape Town, South Africa</span>
+          <a href="mailto:support@craveit.co.za">support@craveit.co.za</a>
+        </div>
+        <nav aria-label="Footer">
+          <a href="/support.html">Support</a>
+          <a href="/support.html#delete">Delete your account</a>
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+      <div class="site-footer__base">
         <span>© 2026 Crave It Health (Pty) Ltd</span>
         <span class="tm">iPhone is a trademark of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</span>
       </div>
-      <nav aria-label="Footer">
-        <a href="/support.html">Support</a>
-        <a href="/support.html#delete">Delete your account</a>
-        <a href="/privacy.html">Privacy policy</a>
-        <a href="/terms.html">Terms</a>
-      </nav>
     </div>
   </footer>
 </body>

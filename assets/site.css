@@ -202,13 +202,15 @@ html:not(.js) .hdr-bar { background: rgba(255,255,255,0.86); }
 .crave__note { font-size: 13px; line-height: 1.45; color: var(--cv-ink); }
 
 /* ---------- about / why ---------- */
-.about__grid { gap: 56px 80px; align-items: start; }
+/* "Why" comes first and About follows it (owner, 4 Oct 2026); the divider line sits between the two. */
+.about { padding-top: 40px; }
+.about__grid { gap: 56px 80px; align-items: start; border-top: 1px solid var(--line); padding-top: 72px; }
 .about__copy { gap: 22px; font-size: 19px; line-height: 1.6; padding-top: 8px; }
 .about__copy p { text-wrap: pretty; }
 .quote-card { position: relative; max-width: 1200px; margin: 88px auto 0; border-radius: 50px; overflow: hidden; background: var(--cv-gradient-home-text); padding: clamp(40px, 7vw, 88px); }
 .quote-card p { position: relative; max-width: 900px; font-family: var(--cv-font-serif); font-style: italic; font-size: clamp(26px, 3.4vw, 42px); line-height: 1.3; color: #FFFFFF; text-wrap: balance; }
-.why { padding: 40px 24px 120px; }
-.why__grid { gap: 48px 80px; align-items: start; border-top: 1px solid var(--line); padding-top: 72px; }
+.why { padding: 120px 24px 0; }
+.why__grid { gap: 48px 80px; align-items: start; }
 .why__lead { font-family: var(--cv-font-serif); font-size: clamp(24px, 2.6vw, 32px); line-height: 1.4; color: var(--cv-purple-dark); text-wrap: pretty; }
 .why__copy { gap: 18px; padding-top: 44px; }
 

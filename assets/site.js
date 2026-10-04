@@ -56,13 +56,16 @@
     var nav = doc.getElementById('site-nav');
     if (!btn || !nav) return;
     var isOpen = function () { return hdr.classList.contains('is-open'); };
-    var setOpen = function (open, returnFocus) {
+    // moveFocus: only when the menu was opened from the keyboard. Moving focus after a tap made iPhone Safari draw
+    // the focus ring round "About", so it looked already chosen (found 4 Oct 2026 in the iPhone simulator).
+    var setOpen = function (open, returnFocus, moveFocus) {
       hdr.classList.toggle('is-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) { var first = nav.querySelector('a'); if (first) first.focus(); }
+      if (open) { var first = nav.querySelector('a'); if (first && moveFocus) first.focus(); }
       else if (returnFocus) btn.focus();
     };
-    btn.addEventListener('click', function () { setOpen(!isOpen(), false); });
+    // A click made with Enter or Space has detail 0; a tap or mouse click has detail 1 or more.
+    btn.addEventListener('click', function (e) { setOpen(!isOpen(), false, e.detail === 0); });
     doc.addEventListener('keydown', function (e) {
       if ((e.key === 'Escape' || e.key === 'Esc') && isOpen()) { e.preventDefault(); setOpen(false, true); }
     });

@@ -137,6 +137,7 @@
     var imgs = all('.scr-img', box);
     var toggle = box.querySelector('.scr-pause');
     var label = box.querySelector('.scr-pause__label');
+    var caption = box.querySelector('.scr-caption'); // shown on narrow screens, where the tiles hide their descriptions
     var current = 0;
     var set = function (i) {
       current = i;
@@ -144,6 +145,8 @@
         t.classList.toggle('is-on', j === i);
         t.setAttribute('aria-pressed', j === i ? 'true' : 'false');
       });
+      var desc = tabs[i].querySelector('.scr__desc');
+      if (caption && desc) caption.textContent = desc.textContent;
       imgs.forEach(function (im, j) {
         im.classList.toggle('is-on', j === i);
         if (j === i) im.removeAttribute('aria-hidden'); else im.setAttribute('aria-hidden', 'true');
@@ -164,5 +167,20 @@
       if (label) label.textContent = paused ? 'Play slideshow' : 'Pause slideshow';
     });
     box.classList.add('is-auto');
+  });
+
+  /* 7. Hero tags: when the words run onto a second line, drop the separator dots so none hangs at a line end. */
+  safe('tags', function () {
+    var row = doc.querySelector('.hero__tags');
+    if (!row) return;
+    var words = all('span:not(.sep)', row);
+    var check = function () {
+      row.classList.remove('is-wrapped'); // measure with the dots in place
+      var top = words[0].offsetTop;
+      row.classList.toggle('is-wrapped', words.some(function (w) { return w.offsetTop !== top; }));
+    };
+    check();
+    window.addEventListener('resize', check, { passive: true });
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(check);
   });
 })();
